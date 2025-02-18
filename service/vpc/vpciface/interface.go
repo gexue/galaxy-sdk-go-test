@@ -9,7 +9,7 @@
 package vpciface
 
 import (
-	"github.com/KscSDK/ksc-sdk-go/service/vpc"
+	"github.com/gexue/galaxy-sdk-go-test/service/vpc"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
 )

@@ -1,4 +1,4 @@
-module github.com/KscSDK/ksc-sdk-go
+module github.com/gexue/galaxy-sdk-go-test
 
 go 1.12
 

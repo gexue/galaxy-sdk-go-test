@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/KscSDK/ksc-sdk-go/ksc"
-	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
-	"github.com/KscSDK/ksc-sdk-go/service/tag"
+	"github.com/gexue/galaxy-sdk-go-test/ksc"
+	"github.com/gexue/galaxy-sdk-go-test/ksc/utils"
+	"github.com/gexue/galaxy-sdk-go-test/service/tag"
 )
 
 func main() {

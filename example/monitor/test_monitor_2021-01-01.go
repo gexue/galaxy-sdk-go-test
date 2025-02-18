@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/KscSDK/ksc-sdk-go/ksc"
-	"github.com/KscSDK/ksc-sdk-go/ksc/utils"
-	"github.com/KscSDK/ksc-sdk-go/service/monitorv4"
+	"github.com/gexue/galaxy-sdk-go-test/ksc"
+	"github.com/gexue/galaxy-sdk-go-test/ksc/utils"
+	"github.com/gexue/galaxy-sdk-go-test/service/monitorv4"
 )
 
 //只适用于docker产品线

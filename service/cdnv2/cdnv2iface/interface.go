@@ -9,7 +9,7 @@
 package cdnv2iface
 
 import (
-	"github.com/KscSDK/ksc-sdk-go/service/cdnv2"
+	"github.com/gexue/galaxy-sdk-go-test/service/cdnv2"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
 )

@@ -9,7 +9,7 @@
 package kisiface
 
 import (
-	"github.com/KscSDK/ksc-sdk-go/service/kis"
+	"github.com/gexue/galaxy-sdk-go-test/service/kis"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
 )
