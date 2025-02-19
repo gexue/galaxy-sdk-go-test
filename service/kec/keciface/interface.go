@@ -9,7 +9,7 @@
 package keciface
 
 import (
-	"github.com/KscSDK/ksc-sdk-go/service/kec"
+	"github.com/gexue/galaxy-sdk-go-test/service/kec"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/request"
 )
