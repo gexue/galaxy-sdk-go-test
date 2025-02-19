@@ -1,5 +1,10 @@
 package utils
 
+import (
+	"fmt"
+	"os"
+)
+
 type UrlInfo struct {
 	UseSSL      bool
 	Locate      bool
@@ -12,21 +17,33 @@ type ServiceInfo struct {
 }
 
 const (
-	url         = ".api.ksyun.com"
-	internalUrl = "internal.api.ksyun.com"
-	http        = "http"
-	https       = "https"
+	// EnvApiDomain is the environment variable name for the API domain. If set, it will override the default domain.
+	EnvApiDomain   = "KSC_GALAXY_API_DOMAIN"
+	defaultDomain  = "example.com"
+	urlTpl         = "%s://%s.api.%s"
+	internalPrefix = "internal"
+	http           = "http"
+	https          = "https"
 )
 
 func Url(urlInfo *UrlInfo, info ServiceInfo) string {
-	p := Protocol(urlInfo.UseSSL)
-	if urlInfo.UseInternal {
-		return p + "://" + internalUrl
+	protocol := Protocol(urlInfo.UseSSL)
+	var reqDomain string
+	if val, ok := os.LookupEnv(EnvApiDomain); ok && val != "" {
+		reqDomain = val
+	} else {
+		reqDomain = defaultDomain
 	}
+	var reqUrlPrefix string
 	if urlInfo.Locate && &info.Region != nil {
-		return p + "://" + info.Service + "." + info.Region + url
+		reqUrlPrefix = info.Service + "." + info.Region
+	} else if info.Service != "" {
+		reqUrlPrefix = info.Service
 	}
-	return p + "://" + info.Service + url
+	if reqUrlPrefix == "" || urlInfo.UseInternal {
+		reqUrlPrefix = internalPrefix
+	}
+	return fmt.Sprintf(urlTpl, protocol, reqUrlPrefix, reqDomain)
 }
 
 func Protocol(useSSL bool) string {
