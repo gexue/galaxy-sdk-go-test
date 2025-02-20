@@ -86,6 +86,9 @@ func SdkNew(p client.ConfigProvider, cfgs *ksc.Config, info ...*utils.UrlInfo) *
 		if info[0].UseInternal {
 			_info.UseInternal = info[0].UseInternal
 		}
+		if info[0].Domain != "" {
+			_info.Domain = info[0].Domain
+		}
 
 	}
 	return ExtraNew(&_info, p, &aws.Config{Region: cfgs.Region})
